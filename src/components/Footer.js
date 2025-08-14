@@ -22,7 +22,7 @@ export default function Footer() {
         <div className={styles.center}>
           <p>También puedes escribirnos un correo electrónico a:</p>
           <Link href="mailto:contactenos@apodex.co">
-            contactenos@ceiba.com.co
+            contactenos@apodex.co
           </Link>
           <div className={styles.iconRow}>
             <Image src="/apodex.jpg" alt="Línea Ética" width={50} height={50} />
