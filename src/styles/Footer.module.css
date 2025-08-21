@@ -56,6 +56,8 @@
   justify-content: space-between;
   gap: 1rem;
   font-size: 0.85rem;
+  padding-inline: 100px;
+  align-items: center;
 }
 
 .social {
@@ -65,4 +67,18 @@
 
 .social a {
   display: inline-block;
+}
+
+@media (max-width: 600px) {
+  .bottom {
+    flex-direction: column; 
+    align-items: flex-start;
+    padding-inline: 1rem; 
+    text-align: center; 
+  }
+
+  .social {
+    width: 100%;
+    justify-content: center;
+  }
 }
