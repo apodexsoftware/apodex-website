@@ -21,7 +21,7 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${isScrolled ? styles.shrink : ''}`}>
       <div className={styles.brand}>
         <Image
-          src="/apodex.jpg"
+          src="/apodex-logo-blue.svg"
           alt="Apodex Logo"
           width={40}
           height={40}
