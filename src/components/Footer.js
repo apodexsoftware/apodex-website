@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "../styles/Footer.module.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import PsychologyAltIcon from "@mui/icons-material/PsychologyAlt";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 export default function Footer() {
   return (
@@ -12,21 +12,41 @@ export default function Footer() {
         {/* Columna izquierda */}
         <div className={styles.left}>
           <h3>Estamos ubicados en:</h3>
-          <p>Medellín, Colombia</p>
-          <p>Calle 8 b 65 191 oficina 409 Marinilla.</p>
-          <p>Whatsapp: (+57) 311 603 0458</p>
+          <p>Marinilla, Colombia</p>
+          <p>Carrera 30b # 37 - 44 Barrio los Giraldos</p>
+          <p>Telefonos:</p>
+          <div style={{ paddingLeft: "1em" }}>
+            <p>
+              <WhatsAppIcon
+                style={{ verticalAlign: "middle", color: "#25D366" }}
+              />{" "}
+              (+57) 321 488 4195
+            </p>
+            <p>
+              <WhatsAppIcon
+                style={{ verticalAlign: "middle", color: "#25D366" }}
+              />{" "}
+              (+57) 301 268 6790
+            </p>
+            <p>
+              <WhatsAppIcon
+                style={{ verticalAlign: "middle", color: "#25D366" }}
+              />{" "}
+              (+57) 311 603 0458
+            </p>
+          </div>
         </div>
 
         {/* Columna central */}
         <div className={styles.center}>
           <p>También puedes escribirnos un correo electrónico a:</p>
           <Link href="mailto:contactenos@apodex.co">contactenos@apodex.co</Link>
-          <div className={styles.iconRow}>
+          {/* <div className={styles.iconRow}>
             <Link href="#">
               PQRS
               <PsychologyAltIcon fontSize="large" />
             </Link>
-          </div>
+          </div> */}
         </div>
 
         {/* Columna derecha */}
