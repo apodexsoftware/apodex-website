@@ -11,9 +11,9 @@ export default function Footer() {
       <div className={styles.main}>
         {/* Columna izquierda */}
         <div className={styles.left}>
-          <h3>Estamos ubicados en:</h3>
+          <h3>Oficina administrativa:</h3>
           <p>Marinilla, Colombia</p>
-          <p>Carrera 30b # 37 - 44 Barrio los Giraldos</p>
+          <p>CoCrecer Coworking, Carrera 30b # 37 - 44 Barrio los Giraldos</p>
           <p>Telefonos:</p>
           <div style={{ paddingLeft: "1em" }}>
             <p>
