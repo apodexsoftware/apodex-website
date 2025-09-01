@@ -2,12 +2,15 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "../styles/Navbar.module.css";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +19,21 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen]);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <nav className={`${styles.navbar} ${isScrolled ? styles.shrink : ""}`}>
@@ -30,38 +48,50 @@ export default function Navbar() {
       </div>
 
       {/* Botón hamburguesa */}
-      <button
-        className={styles.hamburger}
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Menú"
-      >
-        <span className={styles.bar}></span>
-        <span className={styles.bar}></span>
-        <span className={styles.bar}></span>
+      <button className={styles.hamburger} onClick={toggleMenu}>
+        {isOpen ? (
+          <CloseIcon style={{ fontSize: 28, color: "#333" }} />
+        ) : (
+          <MenuIcon style={{ fontSize: 28, color: "#333" }} />
+        )}
       </button>
 
       {/* Menú */}
-      <ul className={`${styles.menu} ${isOpen ? styles.open : ""}`}>
+      <ul
+        ref={menuRef}
+        className={`${styles.menu} ${isOpen ? styles.open : ""}`}
+      >
         <li>
-          <Link href="/" onClick={() => setIsOpen(false)}>Inicio</Link>
+          <Link href="/" onClick={() => setIsOpen(false)}>
+            Inicio
+          </Link>
         </li>
         <li>
-          <Link href="/#about" onClick={() => setIsOpen(false)}>Sobre Nosotros</Link>
+          <Link href="/#about" onClick={() => setIsOpen(false)}>
+            Sobre Nosotros
+          </Link>
         </li>
         <li>
-          <Link href="/#clients" onClick={() => setIsOpen(false)}>Clientes</Link>
+          <Link href="/#clients" onClick={() => setIsOpen(false)}>
+            Clientes
+          </Link>
         </li>
         <li>
-          <Link href="/#products" onClick={() => setIsOpen(false)}>Productos</Link>
+          <Link href="/#products" onClick={() => setIsOpen(false)}>
+            Productos
+          </Link>
         </li>
         <li>
-          <Link href="/#services" onClick={() => setIsOpen(false)}>Servicios</Link>
+          <Link href="/#services" onClick={() => setIsOpen(false)}>
+            Servicios
+          </Link>
         </li>
         <li>
-          <Link href="/#contact" onClick={() => setIsOpen(false)}>Contacto</Link>
+          <Link href="/#contact" onClick={() => setIsOpen(false)}>
+            Contacto
+          </Link>
         </li>
       </ul>
     </nav>
   );
 }
-

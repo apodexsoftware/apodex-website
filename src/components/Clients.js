@@ -6,10 +6,7 @@ export default function Clients() {
     {
       name: "Renovación carismática católica, Diócesis Sonsón - Rionegro",
       logo: "/escuela.jpg",
-    },
-    { name: "Beta Corp", logo: "/apodex.jpg" },
-    { name: "Gamma Ltd", logo: "/apodex.jpg" },
-    { name: "Delta Group", logo: "/apodex.jpg" },
+    },    
   ];
 
   return (
