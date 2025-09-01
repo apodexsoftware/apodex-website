@@ -7,19 +7,19 @@ export default function Products() {
       name: "Producto A",
       description:
         "Solución innovadora para optimizar procesos y mejorar la productividad.",
-      image: "/apodex.jpg",
+      image: "/apodex-logo-blue.svg",
     },
     {
       name: "Producto B",
       description:
         "Herramienta versátil para empresas que buscan digitalizar sus operaciones.",
-      image: "/apodex.jpg",
+      image: "/apodex-logo-blue.svg",
     },
     {
       name: "Producto C",
       description:
         "Tecnología de última generación para la gestión eficiente de recursos.",
-      image: "/apodex.jpg",
+      image: "/apodex-logo-blue.svg",
     },
   ];
 

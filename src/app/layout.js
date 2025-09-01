@@ -10,9 +10,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+       <head>
+        <link rel="icon" href="/apodex-logo-blue.svg" />
+      </head>
       <body>
         <Navbar />
-        <main>{children}</main>
+        <main className="main-content">{children}</main>
         <Footer />
       </body>
     </html>
